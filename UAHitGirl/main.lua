@@ -1,15 +1,21 @@
-local background = display.newImageRect( "map3.jpg", display.actualContentWidth, display.actualContentHeight )
+--Background--
+local background = display.newImageRect( "map3.jpg", 1000, 1334 )
 background.x = display.contentCenterX
 background.y = display.contentCenterY
 background.alpha = 0.9
+background.rotation = -90
 
-
+--Title--
+local title = display.newText("UAHitGirl",275,125,450,0,100,100)
+title:setFillColor(0,0,1)
+title:toFront()
 --Art Student--
-local art = display.newImageRect("006-painting-palette.png",120,120)
+local art = display.newImageRect("006-painting-palette.png",60,60)
 art.x = 200
 art.y = 300
 art:toFront()
-art.rotation = 90
+
+
 local function tapArtIcon( event )
     art.alpha = 0.5
     local question = display.newRect(display.contentCenterX,display.contentCenterY, 300, 500)
@@ -25,17 +31,24 @@ local function tapArtIcon( event )
     local canceltext = display.newText("CANCEL", 300, 780, native.systemFont, 15)
     canceltext.rotation = 90
     local function clickCancel(event)
-        event.
-
+    question.remove()
+    myText.remove()
+    yes.remove()
+    yestext.remove()
+    cancel.remove()
+    canceltext.remove()
+    end
 end
 art:addEventListener( "tap", tapArtIcon )
 
+
 --Nursing Student--
-local nurse = display.newImageRect("009-nurse.png",120,120)
-nurse.x = 325
+local nurse = display.newImageRect("009-nurse.png",60,60)
+nurse.x = 350
 nurse.y = 360
 nurse:toFront()
-nurse.rotation = 90
+
+
 local function tapNurseIcon(event)
     nurse.alpha = 0.5
     question = display.newRect(display.contentCenterX,display.contentCenterY, 400, 600)
@@ -52,12 +65,15 @@ local function tapNurseIcon(event)
     canceltext.rotation = 90
 end
 nurse:addEventListener( "tap", tapNurseIcon )
+
+
 --Biology Student--
-local biology = display.newImageRect("003-biology.png",120,120)
+local biology = display.newImageRect("003-biology.png",60,60)
 biology.x = 250
 biology.y = 600
 biology:toFront()
-biology.rotation = 90
+
+
 local function tapBiologyIcon(event)
     biology.alpha = 0.5
     question = display.newRect(display.contentCenterX,display.contentCenterY, 400, 600)
@@ -77,11 +93,12 @@ biology:addEventListener( "tap", tapBiologyIcon )
 
 
 --Computer Science Student--
-local cs = display.newImageRect("005-student.png",120,120)
-cs.x = 600
-cs.y = 1200
+local cs = display.newImageRect("005-student.png",60,60)
+cs.x = 1200
+cs.y = 100
 cs:toFront()
-cs.rotation = 90
+
+
 local function tapCSIcon(event)
     cs.alpha = 0.5
     question = display.newRect(display.contentCenterX,display.contentCenterY, 400, 600)
@@ -100,11 +117,12 @@ end
 cs:addEventListener( "tap", tapCSIcon )
 
 --Business Student--
-local business = display.newImageRect("001-briefcase.png",120,120)
+local business = display.newImageRect("001-briefcase.png",60,60)
 business.x = 200
 business.y = 450
 business:toFront()
-business.rotation = 90
+
+
 local function tapBusinessIcon(event)
     business.alpha = 0.5
     question = display.newRect(display.contentCenterX,display.contentCenterY, 400, 700)
