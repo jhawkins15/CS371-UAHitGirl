@@ -21,7 +21,7 @@ local function showNursing()
 
 end
 
--- "scene:create()"
+
 function scene:create( event )
  
    local sceneGroup = self.view
@@ -30,7 +30,7 @@ function scene:create( event )
    -- Example: add display objects to "sceneGroup", add touch listeners, etc.
 end
  
--- "scene:show()"
+
 function scene:show( event )
  
    local sceneGroup = self.view
@@ -39,11 +39,28 @@ function scene:show( event )
    if ( phase == "will" ) then
       -- Called when the scene is still off screen (but is about to come on screen).
 	print("we made it234")
-	local background = display.newImage("nursing.jpg", display.contentCenterX/1.15, display.contentCenterY)
-	local nurse = display.newImage("nursenormal.png", 150, 800)
-	local speechbubble = display.newImage("speechbubble.png", 440, 825)
-	local speechtext= display.newText("Do some fucking work, Hawkins", 492, 838, native.systemFont, 21 )
-	speechtext:setFillColor(0,0,0)
+	local background = display.newImage("nursing.jpg", display.contentCenterX, display.contentCenterY)
+	background:scale(1.27,1.15)
+	local nurse = display.newImage("nursenormal.png",130, 585)
+	local speechbubble = display.newImage("speechbubble.png", 675, 300)
+	speechbubble:scale(1.3,.7)
+	speechbubble.alpha = 0.85
+	--local speechtext= display.newText("Do some fucking work, Hawkins", 492, 838, native.systemFont, 21 )
+	--speechtext:setFillColor(0,0,0)
+	
+	local options = 
+{
+    text = "I’m sorry, I find it very hard to believe that you, a total stranger, legitimately give a s**t about what I’ve got going on right now, and also I’m picking up some serious Weinstein vibes from you right now… Ok look, that was kind of harsh. I tell you what if you can answer this question correctly, which based how big of a dunce you look like asking a random nursing student on her way to class “Do you wanna talk about it” I’d be pretty surprised if you did, MAYBE we can talk about it sometime later.",
+    x = 675,
+    y = 300,
+    width = 500,
+    font = native.systemFont,   
+    fontSize = 20,
+    --align = "right"  -- Alignment parameter
+}
+ 
+local myText = display.newText( options )
+myText:setFillColor( 0, 0, 0 )
 	--self.view:insert(nursingbg);
 	--button1 = display.newRect(150,150, 200, 200)
 	--button1:setFillColor(0,0,1)
