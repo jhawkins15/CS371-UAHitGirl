@@ -40,11 +40,12 @@ function scene:show( event )
    if ( phase == "will" ) then
       -- Called when the scene is still off screen (but is about to come on screen).
 	local background = display.newImage("uah.png", display.contentCenterX, display.contentCenterY)
-	self.view:insert(background);
-	button = display.newRoundedRect(500, 700, 275, 75,25)
+   background:scale(1.76,1)
+   self.view:insert(background);
+	button = display.newRoundedRect(700, 700, 350, 65,25)
 	button:setFillColor(0,0,1)
 	self.view:insert(button);
-	text = display.newText("Go to Charger Union?", 500, 700, native.systemFont, 25 )
+	text = display.newText("Go to Charger Union", 700, 700, native.systemFont, 35 )
 	self.view:insert(text);
 	function onPress(event)
 	if (event.phase == "ended") then

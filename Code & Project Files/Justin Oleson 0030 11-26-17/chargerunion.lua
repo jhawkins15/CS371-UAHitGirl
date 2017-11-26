@@ -38,37 +38,27 @@ function scene:show( event )
  
    if ( phase == "will" ) then
       -- Called when the scene is still off screen (but is about to come on screen).
-	local background = display.newImage("chargerunion.jpg", display.contentCenterX/1.15, display.contentCenterY)
+	local background = display.newImage("chargerunion.jpg",display.contentCenterX,display.contentCenterY)
+	background:scale(1.13,1.85)
 	self.view:insert(background);
-	button1 = display.newRect(150,150, 200, 200)
-	button1:setFillColor(0,0,1)
-	self.view:insert(button1);
-	text1 = display.newText("Back to main menu?",150, 150, native.systemFont, 40 )
-	self.view:insert(text1);
 	function onPress(event)
 	if (event.phase == "ended") then
 		composer.gotoScene("mainmenu");
-		--button:setFillColor(1,0,0)
-	--elseif (event.phase =="ended") then
-		--button:setFillColor(0,0,1)
 	end
 end
-button1:addEventListener("touch", onPress)
+
 	end
-	button = display.newRect(display.contentCenterX, display.contentCenterY, 200, 200)
-	button:setFillColor(0,0,1)
-	self.view:insert(button);
-	text = display.newText("map", display.contentCenterX, display.contentCenterY, native.systemFont, 40 )
-	self.view:insert(text);
+	mapbutton = display.newRoundedRect(1275, 700, 100, 70,25)
+	mapbutton:setFillColor(0,0,1)
+	self.view:insert(mapbutton);
+	maptext = display.newText("map", 1275, 700, native.systemFont, 40 )
+	self.view:insert(maptext);
 	function onPress(event)
 	if (event.phase == "ended") then
 		composer.gotoScene("map");
-		--button:setFillColor(1,0,0)
-	--elseif (event.phase =="ended") then
-		--button:setFillColor(0,0,1)
 	end
 end
-button:addEventListener("touch", onPress)
+mapbutton:addEventListener("touch", onPress)
 	end
 
 	  
