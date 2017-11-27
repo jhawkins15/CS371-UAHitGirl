@@ -1,5 +1,11 @@
 local composer = require( "composer" )
 local scene = composer.newScene()
+
+
+
+
+
+
  
 ---------------------------------------------------------------------------------
 -- All code outside of the listener functions will only be executed ONCE
@@ -25,6 +31,8 @@ end
 function scene:create( event )
  
    local sceneGroup = self.view
+   nurseMusic = audio.loadStream("titleMusic.wav");
+   audio.play(titleMusic, { channel = 2, loops =- 1, fadein = 500 });
  
    -- Initialize the scene here.
    -- Example: add display objects to "sceneGroup", add touch listeners, etc.
@@ -42,9 +50,7 @@ function scene:show( event )
 	local background = display.newImage("nursing.jpg", display.contentCenterX, display.contentCenterY)
 	background:scale(1.27,1.15)
 	local nurse = display.newImage("nursenormal.png",130, 585)
-	local speechbubble = display.newImage("speechbubble.png", 675, 300)
-	speechbubble:scale(1.3,.7)
-	speechbubble.alpha = 0.85
+	
 	--local speechtext= display.newText("Do some fucking work, Hawkins", 492, 838, native.systemFont, 21 )
 	--speechtext:setFillColor(0,0,0)
 	
@@ -75,6 +81,34 @@ local options1 =
 local myText = display.newText( options1 )
 myText:setFillColor( 0, 0, 0 )
 
+<<<<<<< HEAD
+=======
+
+
+local speechbubble = display.newImage("speechbubble.png", 675, 300)
+	speechbubble:scale(1.3,.7)
+	speechbubble.alpha = 0.85
+	
+myText:toFront()
+function onPress(event)
+	if (event.phase == "ended") then
+		--display.remove(speechbubble)
+		display.remove(myText)
+		
+		
+		
+		--moreText()
+		
+	end
+end
+speechbubble:addEventListener("touch", onPress)
+
+
+
+
+
+
+>>>>>>> 4e01be1c1c825b004c290c6c86f99f8de39cd9a6
 	--self.view:insert(nursingbg);
 	--button1 = display.newRect(150,150, 200, 200)
 	--button1:setFillColor(0,0,1)
