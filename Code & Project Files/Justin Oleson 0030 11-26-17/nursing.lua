@@ -50,7 +50,7 @@ function scene:show( event )
 	
 	local options = 
 {
-    text = "I’m sorry, I find it very hard to believe that you, a total stranger, legitimately give a s**t about what I’ve got going on right now, and also I’m picking up some serious Weinstein vibes from you right now… Ok look, that was kind of harsh. I tell you what if you can answer this question correctly, which based how big of a dunce you look like asking a random nursing student on her way to class “Do you wanna talk about it” I’d be pretty surprised if you did, MAYBE we can talk about it sometime later.",
+    text = "Why? Why did I ever think that I wanted to become a nurse?! Who said this would be a good idea? My friends tell me that you have to be pretty smart and with it to get through nursing school but I feel more like a moron each day that goes by that I don’t drop out and major in accounting. Or there’s always the Pony…",
     x = 675,
     y = 300,
     width = 500,
@@ -58,9 +58,23 @@ function scene:show( event )
     fontSize = 20,
     --align = "right"  -- Alignment parameter
 }
- 
-local myText = display.newText( options )
+
+local options1 = 
+{
+    text = "Oh, excuse me please… why aren’t you moving… (he’s LOOKING AT ME)…I really need to get going to my next class, can I help you?",
+    x = 675,
+    y = 300,
+    width = 500,
+    font = native.systemFont,   
+    fontSize = 20,
+    --align = "right"  -- Alignment parameter
+}
+
+
+
+local myText = display.newText( options1 )
 myText:setFillColor( 0, 0, 0 )
+
 	--self.view:insert(nursingbg);
 	--button1 = display.newRect(150,150, 200, 200)
 	--button1:setFillColor(0,0,1)
