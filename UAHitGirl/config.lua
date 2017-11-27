@@ -11,7 +11,7 @@ application =
 		height = 1024, 
 		scale = "letterbox",
 		fps = 60,
-		
+		--orientation = "landscapeRight"
 		--[[
 		imageSuffix =
 		{
