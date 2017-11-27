@@ -42,11 +42,41 @@ function scene:show( event )
 	local background = display.newImage("uah.png", display.contentCenterX, display.contentCenterY)
    background:scale(1.76,1)
    self.view:insert(background);
-	button = display.newRoundedRect(700, 700, 350, 65,25)
+	local title = display.newText("UAHitGirl",690,10,native.systemFont, 125)
+   title:setFillColor(0,0,1)
+   self.view:insert(title);
+   button = display.newRoundedRect(700, 700, 350, 65,25)
 	button:setFillColor(0,0,1)
 	self.view:insert(button);
 	text = display.newText("Go to Charger Union", 700, 700, native.systemFont, 35 )
 	self.view:insert(text);
+
+   --display horse graphic--
+   local horse1 = display.newImage("horse.png",300, 0)
+   local horse2 = display.newImage("horse.png",1075,0)
+   horse1:scale(.7,.7)
+   horse2:scale(.7,.7)
+   self.view:insert(horse1);
+   self.view:insert(horse2);
+
+
+local timerRef = timer.performWithDelay(
+   800,
+   function()
+
+      local heart = display.newImage("heart.png")
+      self.view:insert(heart);
+      heart:scale(.1,.1)
+      heart.y = -heart.contentHeight
+      heart.x = math.random(0,display.viewableContentWidth)
+
+      transition.to(heart,{time = 5000, y = display.viewableContentWidth + heart.contentHeight})
+   end,
+   0
+   )
+
+--createObject()
+
 	function onPress(event)
 	if (event.phase == "ended") then
 		composer.gotoScene("chargerunion");
